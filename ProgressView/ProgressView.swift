@@ -12,9 +12,9 @@ public class ProgressView: UIView {
     
     // MARK: - Properties
     
-    weak var dataSource: ProgressViewDataSource?
+    public weak var dataSource: ProgressViewDataSource?
     
-    var configuration: ProgressViewConfiguration? = nil {
+    public var configuration: ProgressViewConfiguration? = nil {
         didSet {
             reload()
         }

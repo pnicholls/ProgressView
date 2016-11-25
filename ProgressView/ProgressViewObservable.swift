@@ -23,7 +23,7 @@ public final class ProgressViewObservable<T>: ProgressViewObservableProtocol {
     /*:
      Now we'll need to implement an `init` for our class. The default initializer will simply take an initial value for the observable (declaration forthcoming). Given that we're writing Swift here, we'll need to initialize our non-optional `observers` array as well.
      */
-    init(_ value: T) {
+    public init(_ value: T) {
         self.value = value
         observers = []
     }
