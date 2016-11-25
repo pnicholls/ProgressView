@@ -31,7 +31,7 @@ public final class ProgressViewObservable<T>: ProgressViewObservableProtocol {
     /*:
      At this point, when we construct an `Observable` we'll have an initial value. This value is even assignable, but currently we don't have any way of telling the objects in our `observers` array that the value changed. To do this, we'll implement `didSet` for our `value` variable. All we need to do is loop through our listeners and call their associated blocks. Simple!
      */
-    var value: T {
+    public var value: T {
         didSet {
             observers.forEach { (entry: ObserversEntry) in
                 let (_, block) = entry
@@ -44,12 +44,12 @@ public final class ProgressViewObservable<T>: ProgressViewObservableProtocol {
      Last but not least, the mechanism to notify observers is in place, but we have no way to update the `observers` array. We'll implement `subscribe` and `unsubscribe` to package up and add/remove observer tuples into the internal array.
      */
     
-    internal func subscribe(observer: AnyObject, block: @escaping (T, T) -> ()) {
+    public func subscribe(observer: AnyObject, block: @escaping (T, T) -> ()) {
         let entry: ObserversEntry = (observer: observer, block: block)
         observers.append(entry)
     }
     
-    internal func unsubscribe(observer: AnyObject) {
+    public func unsubscribe(observer: AnyObject) {
         let filtered = observers.filter { entry in
             let (owner, _) = entry
             return owner !== observer
