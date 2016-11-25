@@ -40,7 +40,7 @@ public class ProgressView: UIView {
     
     // MARK: - Initializers
     
-    override init(frame: CGRect) {
+    public override init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
@@ -69,7 +69,7 @@ public class ProgressView: UIView {
             collectionView.topAnchor.constraint(equalTo: topAnchor),
             collectionView.trailingAnchor.constraint(equalTo: trailingAnchor),
             collectionView.bottomAnchor.constraint(equalTo: bottomAnchor)
-            ])
+        ])
     }
     
     fileprivate func set(items: [Progressable]) {

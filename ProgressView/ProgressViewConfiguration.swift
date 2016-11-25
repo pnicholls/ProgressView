@@ -18,4 +18,12 @@ public struct ProgressViewConfiguration {
     
     let indicatorAlpha: Float
     
+    // MARK: - Initializers
+    
+    public init(indicatorBackgroundColor: UIColor, indicatorBackgroundAlpha: Float, indicatorColor: UIColor, indicatorAlpha: Float) {
+        self.indicatorBackgroundColor = indicatorBackgroundColor
+        self.indicatorBackgroundAlpha = indicatorBackgroundAlpha
+        self.indicatorColor = indicatorColor
+        self.indicatorAlpha = indicatorAlpha
+    }
 }
