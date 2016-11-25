@@ -6,7 +6,7 @@
 //  Copyright © 2016 Peter Nicholls. All rights reserved.
 //
 
-struct ProgressViewConfiguration {
+public struct ProgressViewConfiguration {
     
     // MARK: - Properties
     

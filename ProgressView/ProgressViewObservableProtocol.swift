@@ -6,7 +6,7 @@
 //  Copyright © 2016 Peter Nicholls. All rights reserved.
 //
 
-protocol ProgressViewObservableProtocol {
+public protocol ProgressViewObservableProtocol {
     associatedtype T
     var value: T { get set }
     func subscribe(observer: AnyObject, block: @escaping (_ newValue: T, _ oldValue: T) -> ())

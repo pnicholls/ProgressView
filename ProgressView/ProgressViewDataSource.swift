@@ -6,6 +6,6 @@
 //  Copyright © 2016 Peter Nicholls. All rights reserved.
 //
 
-protocol ProgressViewDataSource: class {
+public protocol ProgressViewDataSource: class {
     func items(for progressView: ProgressView) -> [Progressable]
 }
