@@ -11,10 +11,8 @@ This is heavily inspired by Instagram Stories.
 ## Usage
 
 ```swift
-extension ExampleViewController: ProgressViewDelegate, ProgressViewDataSource {
-    
-    // MARK: - ProgressViewDelegate
-    
+extension ExampleViewController: ProgressViewDataSource {
+        
     // MARK: - ProgressViewDataSource
     
     func items(for progressView: ProgressView) -> [Progressable] {
