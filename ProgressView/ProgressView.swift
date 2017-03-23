@@ -36,7 +36,7 @@ public class ProgressView: UIView {
         return collectionView
     }()
     
-    fileprivate var items: [Progressable] = []
+    fileprivate var items: [ProgressViewProgressable] = []
     
     // MARK: - Initializers
     
@@ -72,7 +72,7 @@ public class ProgressView: UIView {
         ])
     }
     
-    fileprivate func set(items: [Progressable]) {
+    fileprivate func set(items: [ProgressViewProgressable]) {
         self.items = items
     }
 }

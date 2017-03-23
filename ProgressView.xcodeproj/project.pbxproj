@@ -12,7 +12,7 @@
 		C1C97EB91DDC5F710069BE27 /* ProgressView.h in Headers */ = {isa = PBXBuildFile; fileRef = C1C97EAB1DDC5F710069BE27 /* ProgressView.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1C97EC31DDC5FBE0069BE27 /* ProgressViewObservableProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97EC21DDC5FBE0069BE27 /* ProgressViewObservableProtocol.swift */; };
 		C1C97EC51DDC5FD20069BE27 /* ProgressViewObservable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97EC41DDC5FD20069BE27 /* ProgressViewObservable.swift */; };
-		C1C97EC81DDC60660069BE27 /* Progressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97EC71DDC60660069BE27 /* Progressable.swift */; };
+		C1C97EC81DDC60660069BE27 /* ProgressViewProgressable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97EC71DDC60660069BE27 /* ProgressViewProgressable.swift */; };
 		C1C97ECA1DDC60780069BE27 /* ProgressViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97EC91DDC60780069BE27 /* ProgressViewDataSource.swift */; };
 		C1C97ECC1DDC60960069BE27 /* ProgressViewConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97ECB1DDC60960069BE27 /* ProgressViewConfiguration.swift */; };
 		C1C97ECE1DDC60B80069BE27 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1C97ECD1DDC60B80069BE27 /* ProgressView.swift */; };
@@ -38,7 +38,7 @@
 		C1C97EB81DDC5F710069BE27 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C1C97EC21DDC5FBE0069BE27 /* ProgressViewObservableProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewObservableProtocol.swift; sourceTree = "<group>"; };
 		C1C97EC41DDC5FD20069BE27 /* ProgressViewObservable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewObservable.swift; sourceTree = "<group>"; };
-		C1C97EC71DDC60660069BE27 /* Progressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Progressable.swift; sourceTree = "<group>"; };
+		C1C97EC71DDC60660069BE27 /* ProgressViewProgressable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewProgressable.swift; sourceTree = "<group>"; };
 		C1C97EC91DDC60780069BE27 /* ProgressViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewDataSource.swift; sourceTree = "<group>"; };
 		C1C97ECB1DDC60960069BE27 /* ProgressViewConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressViewConfiguration.swift; sourceTree = "<group>"; };
 		C1C97ECD1DDC60B80069BE27 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
@@ -89,7 +89,7 @@
 				C1C97ECD1DDC60B80069BE27 /* ProgressView.swift */,
 				C1C97EC21DDC5FBE0069BE27 /* ProgressViewObservableProtocol.swift */,
 				C1C97EC41DDC5FD20069BE27 /* ProgressViewObservable.swift */,
-				C1C97EC71DDC60660069BE27 /* Progressable.swift */,
+				C1C97EC71DDC60660069BE27 /* ProgressViewProgressable.swift */,
 				C1C97EC91DDC60780069BE27 /* ProgressViewDataSource.swift */,
 				C1C97ECB1DDC60960069BE27 /* ProgressViewConfiguration.swift */,
 				C1C97ECF1DDC60D80069BE27 /* ProgressViewCollectionViewCell.swift */,
@@ -227,7 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1C97EC51DDC5FD20069BE27 /* ProgressViewObservable.swift in Sources */,
-				C1C97EC81DDC60660069BE27 /* Progressable.swift in Sources */,
+				C1C97EC81DDC60660069BE27 /* ProgressViewProgressable.swift in Sources */,
 				C1C97ECA1DDC60780069BE27 /* ProgressViewDataSource.swift in Sources */,
 				C1C97ECC1DDC60960069BE27 /* ProgressViewConfiguration.swift in Sources */,
 				C1C97ED01DDC60D80069BE27 /* ProgressViewCollectionViewCell.swift in Sources */,

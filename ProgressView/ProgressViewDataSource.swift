@@ -7,5 +7,5 @@
 //
 
 public protocol ProgressViewDataSource: class {
-    func items(for progressView: ProgressView) -> [Progressable]
+    func items(for progressView: ProgressView) -> [ProgressViewProgressable]
 }

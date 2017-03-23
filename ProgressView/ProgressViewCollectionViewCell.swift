@@ -51,7 +51,7 @@ final class ProgressCollectionViewCell: UICollectionViewCell {
     
     // MARK: - Functions
     
-    func configure(with progressItem: Progressable) {
+    func configure(with progressItem: ProgressViewProgressable) {
         animate(for: progressItem.progress.value)
         
         progressItem.progress.subscribe(observer: self, block: { [weak self] newValue, _ in
