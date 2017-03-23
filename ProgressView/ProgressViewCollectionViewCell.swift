@@ -77,6 +77,12 @@ final class ProgressCollectionViewCell: UICollectionViewCell {
     }
     
     fileprivate func animate(for progress: Double) {
+        // Ensure the progress is valid
+        guard !progress.isNaN && progress >= 0 else {
+            return
+        }
+        
+        // Update the frame
         progressLayer.frame = CGRect(x: progressLayer.frame.origin.x, y: progressLayer.frame.origin.y, width: backgroundLayer.frame.size.width * CGFloat(progress), height: progressLayer.frame.size.height)
     }
 }
