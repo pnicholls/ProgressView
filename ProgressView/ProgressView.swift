@@ -16,7 +16,7 @@ public class ProgressView: UIView {
     
     public var configuration: ProgressViewConfiguration? = nil {
         didSet {
-            reload()
+            reloadData()
         }
     }
     
@@ -53,7 +53,7 @@ public class ProgressView: UIView {
     
     // MARK: - Functions
     
-    func reload() {
+    public func reloadData() {
         collectionView.reloadData()
     }
     
