@@ -26,13 +26,23 @@ final class ProgressCollectionViewCell: UICollectionViewCell {
         return shapeLayer
     }()
     
+    fileprivate var progressItem: ProgressViewProgressable? {
+        didSet {
+            guard let progressItem = progressItem else { return }
+            
+            animate(for: progressItem.progress.value)
+            progressItem.progress.subscribe(observer: self, block: { [weak self] newValue, _ in
+                self?.animate(for: newValue)
+            })
+        }
+    }
+    
     // MARK: - Initializers
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         configure()
-        activateConstraints()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -45,18 +55,20 @@ final class ProgressCollectionViewCell: UICollectionViewCell {
         backgroundLayer.frame = CGRect(x: 5, y: 0, width: frame.size.width - 5, height: frame.size.height)
         backgroundLayer.cornerRadius = backgroundLayer.frame.size.height * 0.50
         
-        progressLayer.frame = CGRect(x: backgroundLayer.frame.origin.x, y: 0, width: 0, height: frame.size.height)
+        progressLayer.frame = CGRect(x: backgroundLayer.frame.origin.x, y: backgroundLayer.frame.origin.y, width: backgroundLayer.frame.size.width * CGFloat(progressItem?.progress.value ?? 0.0), height: backgroundLayer.frame.size.height)
         progressLayer.cornerRadius = backgroundLayer.frame.size.height * 0.50
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        progressItem = nil
     }
     
     // MARK: - Functions
     
     func configure(with progressItem: ProgressViewProgressable) {
-        animate(for: progressItem.progress.value)
-        
-        progressItem.progress.subscribe(observer: self, block: { [weak self] newValue, _ in
-            self?.animate(for: newValue)
-        })
+        self.progressItem = progressItem
     }
     
     func configure(with configuration: ProgressViewConfiguration) {
@@ -71,9 +83,6 @@ final class ProgressCollectionViewCell: UICollectionViewCell {
         
         contentView.layer.addSublayer(backgroundLayer)
         contentView.layer.addSublayer(progressLayer)
-    }
-    
-    fileprivate func activateConstraints() {
     }
     
     fileprivate func animate(for progress: Double) {

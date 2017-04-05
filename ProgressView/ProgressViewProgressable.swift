@@ -7,5 +7,6 @@
 //
 
 public protocol ProgressViewProgressable {
+    var identifier: String { get }
     var progress: ProgressViewObservable<Double> { set get }
 }

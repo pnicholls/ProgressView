@@ -36,7 +36,11 @@ public class ProgressView: UIView {
         return collectionView
     }()
     
-    fileprivate var items: [ProgressViewProgressable] = []
+    fileprivate var items: [ProgressViewProgressable] = [] {
+        didSet {
+            bind(to: items)
+        }
+    }
     
     // MARK: - Initializers
     
@@ -74,6 +78,23 @@ public class ProgressView: UIView {
     
     fileprivate func set(items: [ProgressViewProgressable]) {
         self.items = items
+    }
+    
+    fileprivate func bind(to items: [ProgressViewProgressable]) {
+        items.forEach { [weak self] (item) in
+            self?.bind(to: item)
+        }
+    }
+    
+    fileprivate func bind(to item: ProgressViewProgressable) {
+        item.progress.subscribe(observer: self, block: { [weak self] (newValue, previousValue) in
+            guard let items = self?.items, let index = items.index(where: { $0.identifier == item.identifier }) else {
+                return
+            }
+            
+            let itemsBefore = items[0..<index]
+            itemsBefore.forEach { $0.progress.value = 1.0 }
+        })
     }
 }
 
